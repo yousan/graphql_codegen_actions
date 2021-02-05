@@ -1,0 +1,40 @@
+overwrite: true
+schema:
+  - ./schema.graphql
+  - https://raw.githubusercontent.com/aws-amplify/amplify-cli/master/packages/amplify-codegen/awsAppSyncDirectives.graphql
+generates:
+  ./schema.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+#      - typescript-vue-apollo
+    config:
+      # constEnums: true
+      # enumsAsTypes: true
+      # numericEnums: true
+      # enumAsConst: true
+      typesPrefix: If
+      declarationKind: interface
+      withCompositionFunctions: true
+#      namingConvention:
+#        typeNames: pascal-case#pascalCase
+#        transformUnderscore: true
+
+  # jestなどでスキーマ一式の文字列が必要な場合は有効化
+  # ./sourceSchema.ts:
+  #   plugins:
+  #     - add:
+  #         content: 'export const sourceSchema = `'
+  #     - add:
+  #         placement: append
+  #         content: '`'
+  #     - typescript
+  #     - schema-ast
+  #   config:
+  #     includeDirectives: false
+  #     commentDescriptions: true
+
+#  ./graphql-schema.json:
+#    plugins:
+#      - introspection
+
