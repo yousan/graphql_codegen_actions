@@ -1,3 +1,4 @@
 type Character {
   name: String!
+  id: int
 }
