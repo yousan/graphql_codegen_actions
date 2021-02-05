@@ -36,5 +36,8 @@ jobs:
       - name: Cache Dependencies
         run: deno cache deps.ts
 
-      - name: Run Tests
-        run: deno test -A --unstable
+      - name: Codegen
+        run: npm install && npm run codegen
+
+      - name: Commit
+        run: git commit -A && git push origin HEAD
