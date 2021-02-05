@@ -39,5 +39,10 @@ jobs:
       - name: Codegen
         run: npm install && npm run codegen
 
-      - name: Commit
-        run: git commit -A && git push origin HEAD
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: Actions
+          author_email: mail@example.com
+          message: 'Your commit message'
+          add: '*.ts'
