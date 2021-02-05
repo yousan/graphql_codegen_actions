@@ -42,4 +42,5 @@ export interface Scalars {
 export interface IfCharacter {
   __typename?: 'Character';
   name: Scalars['String'];
+  id: Scalars['String'];
 }
